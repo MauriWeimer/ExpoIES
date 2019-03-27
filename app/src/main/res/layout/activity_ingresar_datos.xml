@@ -1,0 +1,463 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fondo"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/btActualizarDB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_gravity="right"
+        android:layout_marginBottom="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_toLeftOf="@id/btCerrarSesion"
+        android:background="@android:color/transparent"
+        android:fontFamily="@font/tahoma"
+        android:text="Actualizar Base de Datos"
+        android:textColor="@color/blanco"
+        android:textSize="10sp"
+        android:textStyle="italic" />
+
+    <Button
+        android:id="@+id/btCerrarSesion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_gravity="right"
+        android:layout_marginBottom="5dp"
+        android:background="@android:color/transparent"
+        android:fontFamily="@font/tahoma"
+        android:text="Cerrar Sesión"
+        android:textColor="@color/blanco"
+        android:textSize="10sp"
+        android:textStyle="italic" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_below="@id/btCerrarSesion"
+        android:layout_height="match_parent"
+        android:layout_above="@id/btGuardar"
+        android:scrollbarSize="0dp">
+
+        <LinearLayout
+            android:id="@+id/lPrincipal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/lNombre"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="15dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tvNombre"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/tahoma"
+                    android:text="Nombre"
+                    android:textColor="@color/blanco"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/etNombre"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="2"
+                    android:background="@color/blanco"
+                    android:ems="10"
+                    android:fontFamily="@font/tahoma"
+                    android:imeOptions="flagNoExtractUi"
+                    android:inputType="textCapWords"
+                    android:padding="7dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lApellido"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="15dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tvApellido"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/tahoma"
+                    android:layout_weight="1"
+                    android:text="Apellido"
+                    android:textColor="@color/blanco"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/etApellido"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="2"
+                    android:background="@color/blanco"
+                    android:ems="10"
+                    android:fontFamily="@font/tahoma"
+                    android:imeOptions="flagNoExtractUi"
+                    android:inputType="textCapWords"
+                    android:padding="7dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lDNI"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="15dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tvDNI"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/tahoma"
+                    android:layout_weight="1"
+                    android:text="DNI"
+                    android:textColor="@color/blanco"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/etDNI"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="2"
+                    android:background="@color/blanco"
+                    android:ems="10"
+                    android:fontFamily="@font/tahoma"
+                    android:imeOptions="flagNoExtractUi"
+                    android:inputType="number"
+                    android:maxLength="8"
+                    android:padding="7dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lProvincia"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="15dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tvProvincia"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/tahoma"
+                    android:layout_weight="1"
+                    android:text="Provincia"
+                    android:textColor="@color/blanco"
+                    android:textSize="18sp" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:background="@color/blanco"
+                    android:orientation="horizontal">
+
+                    <Spinner
+                        android:id="@+id/spProvincia"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        android:textSize="18sp"
+                        android:entries="@array/provincia"
+                        android:backgroundTint="@color/colorAccent"
+                        android:fontFamily="@font/tahoma" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lCiudad"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="15dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tvCiudad"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/tahoma"
+                    android:text="Ciudad"
+                    android:textColor="@color/blanco"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/etCiudad"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="2"
+                    android:background="@color/blanco"
+                    android:ems="10"
+                    android:fontFamily="@font/tahoma"
+                    android:imeOptions="flagNoExtractUi"
+                    android:inputType="textCapWords"
+                    android:padding="7dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lCelular"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="15dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tvCelular"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/tahoma"
+                    android:text="Celular"
+                    android:textColor="@color/blanco"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/etCelular"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="2"
+                    android:background="@color/blanco"
+                    android:ems="10"
+                    android:fontFamily="@font/tahoma"
+                    android:imeOptions="flagNoExtractUi"
+                    android:inputType="phone"
+                    android:maxLength="13"
+                    android:padding="7dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lEmail"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="15dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tvEmail"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:fontFamily="@font/tahoma"
+                    android:text="Email"
+                    android:textColor="@color/blanco"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/etEmail"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_marginRight="3dp"
+                    android:layout_weight="2.07"
+                    android:background="@color/blanco"
+                    android:ems="10"
+                    android:fontFamily="@font/tahoma"
+                    android:imeOptions="flagNoExtractUi"
+                    android:inputType="textEmailAddress"
+                    android:padding="7dp" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.90"
+                    android:background="@color/blanco"
+                    android:orientation="horizontal">
+
+                    <Spinner
+                        android:id="@+id/spEmail"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="@color/colorAccent"
+                        android:fontFamily="@font/tahoma"
+                        android:textSize="18sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lCarrera"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="15dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tvCarrera"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/tahoma"
+                    android:layout_weight="1"
+                    android:text="Carrera"
+                    android:textColor="@color/blanco"
+                    android:textSize="18sp" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:background="@color/blanco"
+                    android:orientation="horizontal">
+
+                    <Spinner
+                        android:id="@+id/spCarrera"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:textSize="18sp"
+                        android:layout_weight="1"
+                        android:backgroundTint="@color/colorAccent"
+                        android:entries="@array/carrera"
+                        android:fontFamily="@font/tahoma" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lComoSeEntero"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="15dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tvComoSeEntero"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/tahoma"
+                    android:layout_weight="1"
+                    android:text="Cómo se enteró?"
+                    android:textColor="@color/blanco"
+                    android:textSize="18sp" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:background="@color/blanco"
+                    android:orientation="horizontal">
+
+                    <Spinner
+                        android:id="@+id/spComoSeEntero"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:textSize="18sp"
+                        android:layout_weight="1"
+                        android:backgroundTint="@color/colorAccent"
+                        android:entries="@array/comoseentero"
+                        android:fontFamily="@font/tahoma" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lNotificar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="15dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tvVacio"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <CheckBox
+                    android:id="@+id/chbNotificar"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:buttonTint="@color/blanco"
+                    android:text="Notificar"
+                    android:textColor="@color/blanco"
+                    android:textSize="18sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lObservacion"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="15dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tvObservacion"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/tahoma"
+                    android:text="Observación"
+                    android:textColor="@color/blanco"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/etObservacion"
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_weight="2"
+                    android:background="@color/blanco"
+                    android:ems="10"
+                    android:fontFamily="@font/tahoma"
+                    android:gravity="start"
+                    android:imeOptions="flagNoExtractUi"
+                    android:inputType="textMultiLine|textCapSentences"
+                    android:padding="7dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/btGuardar"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="5dp"
+        android:backgroundTint="@color/gris"
+        android:fontFamily="@font/tahomabold"
+        android:text="Guardar"
+        android:textColor="@color/fondo" />
+
+    <Button
+        android:id="@+id/btLimpiar"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="5dp"
+        android:layout_toRightOf="@id/btGuardar"
+        android:backgroundTint="@color/gris"
+        android:fontFamily="@font/tahomabold"
+        android:text="Limpiar"
+        android:textColor="@color/fondo" />
+
+    <Button
+        android:id="@+id/btListado"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_margin="5dp"
+        android:backgroundTint="@color/gris"
+        android:fontFamily="@font/tahomabold"
+        android:text="Lista"
+        android:textColor="@color/fondo" />
+
+</RelativeLayout>

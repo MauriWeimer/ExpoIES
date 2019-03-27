@@ -1,0 +1,61 @@
+<resources>
+    <string name="app_name">Expo Carreras IES</string>
+
+    <string-array name="provincia">
+        <item>-</item>
+        <item>Santa Fe</item>
+        <item>Entre Ríos</item>
+        <item>Buenos Aires</item>
+        <item>Catamarca</item>
+        <item>Córdoba</item>
+        <item>Corrientes</item>
+        <item>Chaco</item>
+        <item>Chubut</item>
+        <item>Formosa</item>
+        <item>Jujuy</item>
+        <item>La Pampa</item>
+        <item>La Rioja</item>
+        <item>Mendoza</item>
+        <item>Misiones</item>
+        <item>Neuquén</item>
+        <item>Río Negro</item>
+        <item>Salta</item>
+        <item>San Juan</item>
+        <item>San Luis</item>
+        <item>Santa Cruz</item>
+        <item>Santiago del Estero</item>
+        <item>Tierra del Fuego</item>
+        <item>Tucumán</item>
+    </string-array>
+
+    <string-array name="carrera">
+        <item>-</item>
+        <item>Analista en Relaciones Públicas</item>
+        <item>Desarrollador de Software</item>
+        <item>Dirección de Empresas</item>
+        <item>Diseño Gráfico</item>
+        <item>Diseño y Producción de Indumentaria</item>
+        <item>Periodismo Integral y Deportivo</item>
+    </string-array>
+
+    <string-array name="comoseentero">
+        <item>-</item>
+        <item>Propaganda de Google</item>
+        <item>Evento</item>
+        <item>Página web</item>
+        <item>Busqueda en Google</item>
+        <item>Expo Carreras</item>
+        <item>Facebook</item>
+        <item>Diario</item>
+        <item>Radio</item>
+        <item>TV</item>
+        <item>Boca a boca</item>
+        <item>Ministerio de educación</item>
+        <item>Señaletica</item>
+        <item>Otros</item>
+    </string-array>
+    <string name="title_activity_ingreso_datos">IngresoDatos</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+</resources>
